@@ -4,28 +4,7 @@ import './index.css';
 import App from './App';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
-
-
-const defaultState = {
-  cash: 0,
-  clients: []
-};
-
-const reducer = (state = defaultState, action) => {
-  switch (action.type) {
-    case "UP_CASH":
-      return {...state, cash: state.cash + action.payload};
-    case "DROP_CASH":
-      return {...state, cash: state.cash - action.payload};
-    default:
-      return state
-  }
-};
-
-
-const store = createStore(reducer);
-
-
+import {store} from "./store/index"
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

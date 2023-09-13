@@ -4,7 +4,9 @@ import './App.css';
 
 function App() {
   const dispatch = useDispatch();
-  const cash = useSelector(state => state.cash);
+  const cash = useSelector(state => state.cash.cash);
+  const clients = useSelector(state => state.clients.clients);
+ 
   
   const upCash = (value) => {
     const action = {
