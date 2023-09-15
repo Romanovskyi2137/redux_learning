@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import './App.css';
 import { addClientAction, removeClientAction } from './store/clientReducer';
+import { fetchClients } from './asyncActinos/clientsActions';
 // make actionCreator fn
 
 function App() {
@@ -63,6 +64,7 @@ function App() {
             <button onClick={e => dropCash(Number(prompt()))} className="button">drop cash</button>
           </div>
           <button onClick={e => addClient(prompt())}>add client</button>
+          <button onClick={e => dispatch(fetchClients())}>add many</button>
           <div>
               {clients.length > 0 ?
                   clients.map(client => <div style={clientStyle} key={client.id} onClick={e => removeClient(client.id)}>{client.name}</div>)
